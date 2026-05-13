@@ -1,0 +1,10 @@
+{% extends "app/base.html" %}
+
+{% block content %}
+
+    <h2>Usuários:</h2>
+    {% for user in usuarios %}
+    <p>Nome: {{ user.nome }}| Matrícula: {{ user.matricula }} | Idade: {{ user.idade }} | Cidade: {{ user.cidade }}</p>
+    {% endfor %}
+
+{% endblock content %}
