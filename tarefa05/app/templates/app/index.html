@@ -1,0 +1,45 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+
+<h1 class="mb-4">
+
+    Postagens
+
+</h1>
+
+<div class="list-group">
+
+{% for post in posts %}
+
+<a
+class="list-group-item list-group-item-action"
+href="{% url 'post' post.id %}">
+
+    <h5>
+
+        {{ post.titulo }}
+
+    </h5>
+
+    <small>
+
+        {{ post.data_publicacao }}
+
+    </small>
+
+</a>
+
+{% empty %}
+
+<div class="alert alert-warning">
+
+    Nenhuma postagem cadastrada.
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}
