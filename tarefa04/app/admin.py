@@ -1,6 +1,8 @@
 from django.contrib import admin
-from .models import Topic
+from .models import Tarefa
 
-# Register your models here.
-admin.site.register(Topic)
 
+@admin.register(Tarefa)
+class TarefaAdmin(admin.ModelAdmin):
+    list_display = ("nome", "status", "prazo", "concluida")
+    list_filter = ("concluida",)
